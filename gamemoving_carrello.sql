@@ -1,0 +1,12 @@
+USE GameMoving;
+DROP TABLE IF EXISTS `carrello`;
+CREATE TABLE `carrello` (
+  `CodFiscale` char(16) NOT NULL,
+  PRIMARY KEY (`CodFiscale`),
+  CONSTRAINT `CFisc` FOREIGN KEY (`CodFiscale`) REFERENCES `utente` (`CodFiscale`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+LOCK TABLES `carrello` WRITE;
+INSERT INTO `carrello` VALUES ('CCCDVD01P28H703H');
+UNLOCK TABLES;
+
